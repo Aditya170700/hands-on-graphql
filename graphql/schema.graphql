@@ -1,7 +1,11 @@
 type Query {
     users: [User!]! @all
-    paginated_users: [User!]! @paginate
+    paginatedUsers: [User!]! @paginate
     user(id: ID @eq): User! @find
+}
+
+type Mutation {
+    createUser(name: String!, email: String!, password: String!): User! @create
 }
 
 type User {
